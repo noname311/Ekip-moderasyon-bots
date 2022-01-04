@@ -28,7 +28,7 @@ if(member.roles.highest.position >= message.member.roles.highest.position) retur
    
  let taglıalım = await tdb.fetch(`taglıalım.${message.guild.id}`)
 if(taglıalım === true){
-    if(!member.user.username.includes("wéis")  &&  !member.user.discriminator.includes("#1986") && !member.roles.cache.has(ayarlar.vip) && !member.roles.cache.has(ayarlar.booster)) return message.channel.send(new Discord.MessageEmbed() .setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })) .setDescription(`Sunucumuzda taglı alım modu açıktır kayıt olmak için isminize \`wéis\` sembolünü alabilir yada  \`1986\` Etiketini Alabilir veya \`Boost\` basarak giriş yapabilirsiniz.`))
+    if(!member.user.username.includes("")  &&  !member.user.discriminator.includes("") && !member.roles.cache.has(ayarlar.vip) && !member.roles.cache.has(ayarlar.booster)) return message.channel.send(new Discord.MessageEmbed() .setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })) .setDescription(`Sunucumuzda taglı alım modu açıktır kayıt olmak için isminize \`\` sembolünü alabilir yada  \`\` Etiketini Alabilir veya \`Boost\` basarak giriş yapabilirsiniz.`))
 }
 if(["921486947854213130"].some(erkek => member.roles.cache.has(erkek))) return message.lineReply("Kullanıcı zaten kayıtlı.").then(sil => sil.delete({timeout: 5000}));
  
