@@ -41,12 +41,12 @@ if(["921486947854213130"].some(erkek => member.roles.cache.has(erkek))) return m
  await message.guild.members.cache.get(member.id).roles.add(ayarlar.kız1)
  message.react(ayarlar.adotik)
 client.channels.cache.get(genelchat).send(`<@${member.id}> Aramıza Katıldı ona hoşgeldin diyelim`)
-const Void = client.channels.cache.get(ayarlar.registerlog)
-const log = new Discord.MessageEmbed()
+const Webhook = new Discord.WebhookClient("webhookid", "webhooktoken")
+const tadashi = new Discord.MessageEmbed()
 .setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true }))
 .setColor('#2F3136')
 .setDescription(`${member} üyesi başarıyla  ${message.author} yetkilisi tarafından **Kız** olarak kayıt edildi`)
-    Void.send(log)
+    Webhook.send(tadashi)
             }
             exports.conf = {
                 aliases: ['k'],
