@@ -17,12 +17,12 @@ exports.run = async(client, message, args) => {
          if (!name) 
          return message.lineReply(`${message.author} İsmi Değişecek Kullanıcın İsmini Belritmelisin`)
          let isimler = db.get(`isimler_${member.user.id}`);
-         db.push(`isimler.${member.id}`, `\`${name} wéis\` (İsim Değiştirme)`)
-         await message.guild.members.cache.get(member.id).setNickname(`${name} Wéis`)
+         db.push(`isimler.${member.id}`, `\`${name} tagını yaz\` (İsim Değiştirme)`)
+         await message.guild.members.cache.get(member.id).setNickname(`${name} tagını yaz`)
          const adoş = new Discord.MessageEmbed()
          .setAuthor(message.author.tag, message.author.avatarURL({ dynamic: true }))
          .setColor('#2F3136')
-          .setDescription(`${member} adlı kullanıcın ismi ${message.author} tarafından başarıyla \` ${name} wéis\` olarak değiştirildi  
+          .setDescription(`${member} adlı kullanıcın ismi ${message.author} tarafından başarıyla \` ${name} tagını yaz\` olarak değiştirildi  
           Önceki İsimleri\n${isimler.map((data, i) => `${data}`).join("\n")}`)
            client.channels.cache.get(ayarlar.registerlog).send(adoş)
            message.react(ayarlar.adotik)  
