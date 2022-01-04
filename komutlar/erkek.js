@@ -33,7 +33,7 @@ if(taglıalım === true){
 if(["erkekrolid"].some(e => member.roles.cache.has(e))) return message.lineReply("Kullanıcı zaten kayıtlı.").then(sil => sil.delete({timeout: 5000}));
  
  await message.guild.members.cache.get(member.id).setNickname(`${name} tagını yaz`)
- db.push(`isimler_${member.id}`, ` \`${name} Wéis\` (<@&erkekrolid>) yetkili:${message.author}`);
+ db.push(`isimler_${member.id}`, ` \`${name} Tagını yaz\` (<@&erkekrolid>) yetkili:${message.author}`);
  db.set(`kayıt_${member.id}`, true)
  db.add(`erkek_${message.author.id}`, 1)
  db.add(`toplam_${message.author.id}`, 1)
