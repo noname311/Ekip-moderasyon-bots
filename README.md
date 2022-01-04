@@ -1,2 +1,2 @@
 # ekip-moderasyon-bots
-ekip sunucularında kullandıgım moderasyon botunu paylaşmaya kara verdim qdb zaten
+ekip sunucularında kullandıgım moderasyon botunu paylaşmaya karar verdim qdb zaten
