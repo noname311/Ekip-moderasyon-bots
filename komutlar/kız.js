@@ -39,7 +39,6 @@ if(["921486947854213130"].some(erkek => member.roles.cache.has(erkek))) return m
  db.add(`toplam_${message.author.id}`, 1)
  await message.guild.members.cache.get(member.id).roles.remove(ayarlar.unregister)
  await message.guild.members.cache.get(member.id).roles.add(ayarlar.kız1)
- await message.guild.members.cache.get(member.id).roles.add(ayarlar.kız2)
  message.react(ayarlar.adotik)
 client.channels.cache.get(genelchat).send(`<@${member.id}> Aramıza Katıldı ona hoşgeldin diyelim`)
 const Void = client.channels.cache.get(ayarlar.registerlog)
