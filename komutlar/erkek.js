@@ -28,26 +28,25 @@ if(member.roles.highest.position >= message.member.roles.highest.position) retur
    
  let taglıalım = await tdb.fetch(`taglıalım.${message.guild.id}`)
 if(taglıalım === true){
-    if(!member.user.username.includes("wéis")  &&  !member.user.discriminator.includes("#1986") && !member.roles.cache.has(ayarlar.vip) && !member.roles.cache.has(ayarlar.booster)) return message.channel.send(new Discord.MessageEmbed() .setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })) .setDescription(`Sunucumuzda taglı alım modu açıktır kayıt olmak için isminize \`wéis\` sembolünü alabilir yada  \`1986\` Etiketini Alabilir veya \`Boost\` basarak giriş yapabilirsiniz.`))
+    if(!member.user.username.includes("")  &&  !member.user.discriminator.includes("") && !member.roles.cache.has(ayarlar.vip) && !member.roles.cache.has(ayarlar.booster)) return message.channel.send(new Discord.MessageEmbed() .setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })) .setDescription(`Sunucumuzda taglı alım modu açıktır kayıt olmak için isminize \`\` sembolünü alabilir yada  \`\` Etiketini Alabilir veya \`Boost\` basarak giriş yapabilirsiniz.`))
 }
-if(["921486949225725973"].some(erkek => member.roles.cache.has(erkek))) return message.lineReply("Kullanıcı zaten kayıtlı.").then(sil => sil.delete({timeout: 5000}));
+if(["erkekrolid"].some(e => member.roles.cache.has(e))) return message.lineReply("Kullanıcı zaten kayıtlı.").then(sil => sil.delete({timeout: 5000}));
  
  await message.guild.members.cache.get(member.id).setNickname(`${name} Wéis`)
- db.push(`isimler_${member.id}`, ` \`${name} Wéis\` (<@&921486949225725973>) yetkili:${message.author}`);
+ db.push(`isimler_${member.id}`, ` \`${name} Wéis\` (<@&erkekrolid>) yetkili:${message.author}`);
  db.set(`kayıt_${member.id}`, true)
  db.add(`erkek_${message.author.id}`, 1)
  db.add(`toplam_${message.author.id}`, 1)
  await message.guild.members.cache.get(member.id).roles.remove(ayarlar.unregister)
  await message.guild.members.cache.get(member.id).roles.add(ayarlar.erkek1)
- await message.guild.members.cache.get(member.id).roles.add(ayarlar.erkek2)
  message.react(ayarlar.adotik)
 client.channels.cache.get(genelchat).send(`<@${member.id}> Aramıza Katıldı ona hoşgeldin diyelim`)
-const Void = client.channels.cache.get(ayarlar.registerlog)
-const log = new Discord.MessageEmbed()
+const Webhook = new Discord.WebhookClient("webhookid", "webhooktoken")
+const tadashi = new Discord.MessageEmbed()
 .setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true }))
 .setColor('#2F3136')
 .setDescription(`${member} üyesi başarıyla  ${message.author} yetkilisi tarafından **Erkek** olarak kayıt edildi`)
-    Void.send(log)
+    Webhook.send(tadashi)
             }
             exports.conf = {
                 aliases: ['e'],
